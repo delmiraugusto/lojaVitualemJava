@@ -42,9 +42,28 @@ public class Menu {
     }
 
 
-    public static void main(String[] args) {
-        menu_principal();
+    public static void menuGestor() {
+        int opcao;
+        do{
+            try{
+                System.out.println("***
+                ADMINISTRATIVO
+                ***");
+
+
+
+
+
+
+            }
+
+
+
+        }
+
+
+
+
     }
 }
 
-//calma que vai dar certo

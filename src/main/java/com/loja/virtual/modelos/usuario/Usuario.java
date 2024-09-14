@@ -7,7 +7,7 @@ public class Usuario {
     public Usuario(String nome, String email) {
         this.nome = nome;
         this.email = email;
-        
+
     }
 
     public String getNome() {
@@ -17,8 +17,7 @@ public class Usuario {
     public void SetNome(String nome) {
         this.nome = nome;
     }
-    
-        
+
     public String getEmail() {
         return email;
     }
