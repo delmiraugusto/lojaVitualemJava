@@ -34,7 +34,7 @@ public class Cliente extends Usuario {
             this.pontosFidelidade -= pontos;
             return true;
         } else {
-            return false; 
+            return false;
         }
     }
     public String toString() {
