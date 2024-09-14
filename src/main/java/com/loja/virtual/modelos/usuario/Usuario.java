@@ -1,5 +1,8 @@
 package com.loja.virtual.modelos.usuario;
 
+import java.util.Date;
+
+
 public class Usuario {
     private String nome;
     private String email;
