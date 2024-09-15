@@ -12,7 +12,6 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Pedido {
-
     private int codPedido;
     private Date dataPedido;
 
