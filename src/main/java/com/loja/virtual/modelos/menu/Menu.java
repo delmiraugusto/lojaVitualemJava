@@ -25,7 +25,7 @@ public class Menu {
         =================================
         Escolha uma opção:
 
-                        """);
+        """);
 
                 opcao = scanner.nextInt();
                 scanner.nextLine();
@@ -68,10 +68,9 @@ private static void exibirMenuAdministrativo() {
         |          MENU ADMINISTRATIVO          |
         =========================================
         | 1 - Cadastrar Produto                 |
-        | 2 - Consultar Pedidos                 |
-        | 3 - Produtos Mais Vendidos            |
-        | 4 - Cliente Que Mais Comprou          |
-        | 5 - Total de Pedidos                  |
+        | 2 - Produtos Mais Vendidos            |
+        | 3 - Cliente Que Mais Comprou          |
+        | 4 - Total de Pedidos                  |
         | 0 - Voltar                            |
         =========================================
         Escolha uma opção:

@@ -1,24 +1,28 @@
 package com.loja.virtual.modelos.cliente;
 
+import com.loja.virtual.enumeradores.Role;
 import com.loja.virtual.modelos.usuario.Usuario;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
 @Getter
 @Setter
-
+@AllArgsConstructor
+@NoArgsConstructor
 public class Cliente extends Usuario {
     private String endereco;
     private int pontosFidelidade;
     private int codFuncionario;
     private String senha;
-
-    public Cliente(String nome, String email, String endereco, int pontosFidelidade) {
-        super(nome, email);
-        this.endereco = endereco;
-        this.pontosFidelidade = pontosFidelidade;
-        this.senha = senha;
-    }
+    private Role role = Role.CLIENTE;
+    public static List<Cliente> clientes = new ArrayList<>();
 
     public void adicionarPontos(int pontos){
         this.pontosFidelidade += pontos;
@@ -40,6 +44,6 @@ public class Cliente extends Usuario {
         return this.getNome().equals(usuario) && this.senha.equals(senha);
     }
 
-    }
+}
 
 
