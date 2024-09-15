@@ -4,40 +4,41 @@ import com.loja.virtual.modelos.usuario.Usuario;
 
 import lombok.Getter;
 import lombok.Setter;
+
 @Getter
 @Setter
-
 public class Cliente extends Usuario {
     private String endereco;
     private int pontosFidelidade;
     private int codFuncionario;
-    private String senha;
 
-    public Cliente(String nome, String email, String endereco, int pontosFidelidade) {
-        super(nome, email);
+    public Cliente(String nome, String email, String senha, String endereco, int pontosFidelidade, int codFuncionario) {
+        super(nome, email, senha);
         this.endereco = endereco;
         this.pontosFidelidade = pontosFidelidade;
-        this.senha = senha;
+        this.codFuncionario = codFuncionario;
     }
 
-    public void adicionarPontos(int pontos){
+    public void adicionarPontos(int pontos) {
         this.pontosFidelidade += pontos;
     }
 
     public boolean usarPontos(int pontos) {
-        if(pontos <= pontosFidelidade) {
+        if (pontos <= pontosFidelidade) {
             this.pontosFidelidade -= pontos;
             return true;
         } else {
             return false;
         }
     }
+
+    @Override
     public String toString() {
-        return super.toString() + ", Endereco: " + endereco + ", Pontos de Fidelidade: " + pontosFidelidade;
+        return super.toString() + ", Endereço: " + endereco + ", Pontos de Fidelidade: " + pontosFidelidade;
     }
 
     public boolean validarLogin(String usuario, String senha) {
-        return this.getNome().equals(usuario) && this.senha.equals(senha);
+        return this.getNome().equals(usuario) && this.getSenha().equals(senha);
     }
 
     }
