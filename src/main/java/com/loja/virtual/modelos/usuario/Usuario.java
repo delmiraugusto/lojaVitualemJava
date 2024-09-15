@@ -1,35 +1,30 @@
 package com.loja.virtual.modelos.usuario;
 
-import java.util.Date;
+import com.loja.virtual.Login.Login;
+import com.loja.virtual.enumeradores.Role;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+import java.util.List;
 
-public class Usuario {
-    private static String nome;
-    private String email;
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class Usuario  implements Login {
+    private String nome;
+    private String login;
+    private String senha;
 
-    public Usuario(String nome, String email) {
-        this.nome = nome;
-        this.email = email;
-
+    @Override
+    public boolean acessoPermitido(String login, String senha) {
+        return false;
     }
 
-    public static String getNome() {
-        return nome;
+    @Override
+    public Role getRole() {
+        return null;
     }
-
-    public void SetNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void SetEmail(String email) {
-        this.email = email;
-    }
-
-public String toString() {
-    return "Nome: " + nome + ", Email: " + email;
 }
-    }
