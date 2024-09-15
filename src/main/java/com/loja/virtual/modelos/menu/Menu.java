@@ -3,6 +3,8 @@ package com.loja.virtual.modelos.menu;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import com.loja.virtual.modelos.gestor.Gestor;
+
 public class Menu {
     private static Scanner scanner = new Scanner(System.in);
 
@@ -13,20 +15,27 @@ public class Menu {
         int opcao;
         do {
             try {
-                System.out.println("\n--- MENU PRINCIPAL ---");
-                System.out.println("1- Administrativo");
-                System.out.println("2- Compras");
-                System.out.println("0- Sair");
-                System.out.print("Escolha uma opção: ");
+                System.out.println("""
+        =================================
+        |         MENU PRINCIPAL        |
+        =================================
+        | 1 - Administrativo            |
+        | 2 - Compras                   |
+        | 0 - Sair                      |
+        =================================
+        Escolha uma opção:
+
+                        """;);
+
                 opcao = scanner.nextInt();
                 scanner.nextLine();
 
                 switch (opcao) {
                     case 1:
-                        menuGestor();
+                        exibirMenuAdministrativo();
                         break;
                     case 2:
-                        menuCliente();
+                        exibirMenuCompras();
                         break;
                     case 0:
                         System.out.println("Obrigado... Volte sempre!");
@@ -41,10 +50,37 @@ public class Menu {
         } while (opcao != 0);
     }
 
+private static void exibirMenuAdministrativo() {
+        System.out.println("Digite o usuário do Gestor:");
+        String usuario = scanner.nextLine();
+        System.out.println("Digite a senha do Gestor:");
+        String senha = scanner.nextLine();
 
-    public static void main(String[] args) {
-        menu_principal();
+
+        //Tentando buscar na classe Gestor a validação do usuario
+    /*   if (Gestor.validarLogin(usuario, senha)) {
+            System.out.println("Login realizado com sucesso! Bem-vindo, " + usuario + "!");
+        } else {
+            System.out.println("Usuário ou senha incorretos. Tente novamente.");
+        }*/
     }
+
+
+    private static void exibirMenuCompras() {
+        System.out.println("Digite o seu login:");
+        String usuario = scanner.nextLine();
+        System.out.println("Digite a sua senha:");
+        String senha = scanner.nextLine();
+
+
+        //Tentando buscar na classe Cliente a validação do usuario
+    /*   if (Cliente.validarLogin(usuario, senha)) {
+            System.out.println("Bem-vindo, " + usuario + "!");
+        } else {
+            System.out.println("Usuário ou senha incorretos. Tente novamente.");
+        }*/
+
+
 }
 
-//calma que vai dar certo
+

@@ -2,27 +2,22 @@ package com.loja.virtual.modelos.cliente;
 
 import com.loja.virtual.modelos.usuario.Usuario;
 
+import lombok.Getter;
+import lombok.Setter;
+@Getter
+@Setter
+
 public class Cliente extends Usuario {
     private String endereco;
     private int pontosFidelidade;
+    private int codFuncionario;
+    private String senha;
 
     public Cliente(String nome, String email, String endereco, int pontosFidelidade) {
         super(nome, email);
         this.endereco = endereco;
         this.pontosFidelidade = pontosFidelidade;
-    }
-
-    public String getEndereco(){
-        return endereco;
-    }
-    public void setEndereco(String endereco){
-        this.endereco = endereco;
-    }
-    public int getPontosFidelidade() {
-        return pontosFidelidade;
-    }
-    public void setPontosFidelidade(int pontosFidelidade) {
-        this.pontosFidelidade = pontosFidelidade;
+        this.senha = senha;
     }
 
     public void adicionarPontos(int pontos){
@@ -40,4 +35,11 @@ public class Cliente extends Usuario {
     public String toString() {
         return super.toString() + ", Endereco: " + endereco + ", Pontos de Fidelidade: " + pontosFidelidade;
     }
+
+    public boolean validarLogin(String usuario, String senha) {
+        return this.getNome().equals(usuario) && this.senha.equals(senha);
     }
+
+    }
+
+
