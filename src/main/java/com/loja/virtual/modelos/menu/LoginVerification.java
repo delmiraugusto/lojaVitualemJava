@@ -8,7 +8,8 @@ import com.loja.virtual.modelos.gestor.Gestor;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import static com.loja.virtual.modelos.cliente.MenuCliente.menuCliente;
+import static com.loja.virtual.modelos.menu.MenuCliente.menuCliente;
+import static com.loja.virtual.modelos.menu.MenuGestor.menuGestor;
 
 
 public class LoginVerification {
@@ -19,7 +20,7 @@ public class LoginVerification {
         usuarios.addAll(Gestor.gestores);
 
         Gestor gestor = new Gestor();
-        gestor.setLogin("admin@");
+        gestor.setLogin("admin");
         gestor.setSenha("123");
 
         int option;
@@ -51,7 +52,7 @@ public class LoginVerification {
                     Role role = loginController.login(user, pass, usuarios);
 
                     if(role == Role.GESTOR) {
-                        //exibirMenuAdministrativo();
+                        menuGestor();
                     }
                     if(role == Role.CLIENTE){
                         menuCliente();

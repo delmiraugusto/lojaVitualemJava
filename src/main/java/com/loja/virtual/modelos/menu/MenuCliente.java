@@ -1,4 +1,4 @@
-package com.loja.virtual.modelos.cliente;
+package com.loja.virtual.modelos.menu;
 
 import java.util.Scanner;
 
