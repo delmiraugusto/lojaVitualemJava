@@ -32,7 +32,7 @@ public class LoginVerification {
         | 1 - Login                        |
         |(Caso já possua conta)            |
         | 2 - Cadastrar                    |
-        | (Cadastrar um conta)             |
+        | (Cadastrar uma nova conta)       |
         | 0 - Sair                         |
         ====================================
         Escolha uma opção:

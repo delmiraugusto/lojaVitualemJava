@@ -36,6 +36,8 @@ public class Cliente extends Usuario implements Login {
     public Role getRole() {
         return role;
     }
+
+
 //    public void adicionarPontos(int pontos){
 //        this.pontosFidelidade += pontos;
 //    }

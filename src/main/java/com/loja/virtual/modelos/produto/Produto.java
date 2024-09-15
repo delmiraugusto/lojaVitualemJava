@@ -21,4 +21,15 @@ public class Produto {
     private String dataFabricacao;
     private double valorUnitario;
     public static List<Produto> produtos = new ArrayList<>();
+
+    public static void listarProdutos() {
+        for (int i = 0; i < produtos.size(); i++) {
+            System.out.printf("%d - %s -> %.2f %n",
+                    produtos.get(i).getCodProduto(),
+                    produtos.get(i).getNomeProduto(),
+                    produtos.get(i).getValorUnitario()
+            );
+        }
+    }
+
 }
