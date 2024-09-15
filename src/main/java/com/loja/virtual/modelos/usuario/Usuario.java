@@ -7,24 +7,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
-
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Usuario  implements Login {
+public class Usuario {
     private String nome;
-    private String login;
-    private String senha;
-
-    @Override
-    public boolean acessoPermitido(String login, String senha) {
-        return false;
-    }
-
-    @Override
-    public Role getRole() {
-        return null;
-    }
 }

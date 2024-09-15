@@ -1,5 +1,6 @@
 package com.loja.virtual.modelos.gestor;
 
+import com.loja.virtual.Login.Login;
 import com.loja.virtual.enumeradores.Role;
 import com.loja.virtual.modelos.cliente.Cliente;
 import com.loja.virtual.modelos.usuario.Usuario;
@@ -15,13 +16,25 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Gestor extends Usuario {
+public class Gestor extends Usuario implements Login {
     private int codFuncionario;
     private String setor;
     private Role role = Role.GESTOR;
     public static List<Gestor> gestores = new ArrayList<>();
+    private String login;
+    private String senha;
 
-    public boolean validarLogin(String usuario, String senha) {
-        return this.getNome().equals(usuario) && this.getSenha().equals(senha);
+    @Override
+    public boolean acessoPermitido(String login, String senha) {
+        return login.equals(this.getLogin()) && senha.equals(this.getSenha());
     }
+
+    @Override
+    public Role getRole() {
+        return role;
+    }
+
+//    public boolean validarLogin(String usuario, String senha) {
+//        return this.getNome().equals(usuario) && this.getSenha().equals(senha);
+//    }
 }
