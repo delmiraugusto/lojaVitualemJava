@@ -12,7 +12,7 @@ public class Menu {
     }
 
     public static void menu_principal() {
-        int opcao;
+        int opcao =-1;
         do {
             try {
                 System.out.println("""
@@ -25,7 +25,7 @@ public class Menu {
         =================================
         Escolha uma opção:
 
-                        """;);
+                        """);
 
                 opcao = scanner.nextInt();
                 scanner.nextLine();
@@ -80,7 +80,7 @@ private static void exibirMenuAdministrativo() {
             System.out.println("Usuário ou senha incorretos. Tente novamente.");
         }*/
 
-
+    }
 }
 
 
