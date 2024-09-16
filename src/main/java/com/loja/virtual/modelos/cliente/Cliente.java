@@ -1,16 +1,27 @@
 package com.loja.virtual.modelos.cliente;
 
+import com.loja.virtual.Login.Login;
+import com.loja.virtual.enumeradores.Role;
 import com.loja.virtual.modelos.usuario.Usuario;
-
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
-public class Cliente extends Usuario {
+@AllArgsConstructor
+@NoArgsConstructor
+public class Cliente extends Usuario implements Login {
     private String endereco;
     private int pontosFidelidade;
     private int codFuncionario;
+    private Role role = Role.CLIENTE;
+    private String login;
+    private String senha;
+    public static List<Cliente> clientes = new ArrayList<>();
 
     public Cliente(String nome, String email, String senha, String endereco, int pontosFidelidade, int codFuncionario) {
         super(nome, email, senha);
@@ -31,7 +42,17 @@ public class Cliente extends Usuario {
             return false;
         }
     }
+    
+    @Override
+    public boolean acessoPermitido(String login, String senha) {
+        return login.equals(this.getLogin()) && senha.equals(this.getSenha());
+    }
 
+    @Override
+    public Role getRole() {
+        return role;
+    }
+    
     @Override
     public String toString() {
         return super.toString() + ", Endereço: " + endereco + ", Pontos de Fidelidade: " + pontosFidelidade;
@@ -40,7 +61,6 @@ public class Cliente extends Usuario {
     public boolean validarLogin(String usuario, String senha) {
         return this.getNome().equals(usuario) && this.getSenha().equals(senha);
     }
-
-    }
+}
 
 

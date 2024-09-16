@@ -1,26 +1,40 @@
 package com.loja.virtual.modelos.gestor;
 
+import com.loja.virtual.Login.Login;
+import com.loja.virtual.enumeradores.Role;
+import com.loja.virtual.modelos.cliente.Cliente;
 import com.loja.virtual.modelos.usuario.Usuario;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
-public class Gestor extends Usuario {
-
+@AllArgsConstructor
+@NoArgsConstructor
+public class Gestor extends Usuario implements Login {
     private int codFuncionario;
     private String setor;
+    private Role role = Role.GESTOR;
+    public static List<Gestor> gestores = new ArrayList<>();
+    private String login;
     private String senha;
 
-    public Gestor(String nome, String email, String senha, int codFuncionario, String setor) {
-        super(nome, email);
-        this.senha = senha;
-        this.codFuncionario = codFuncionario;
-        this.setor = setor;
+    @Override
+    public boolean acessoPermitido(String login, String senha) {
+        return login.equals(this.getLogin()) && senha.equals(this.getSenha());
     }
 
-
-    public boolean validarLogin(String usuario, String senha) {
-        return this.getNome().equals(usuario) && this.senha.equals(senha);
+    @Override
+    public Role getRole() {
+        return role;
     }
+
+//    public boolean validarLogin(String usuario, String senha) {
+//        return this.getNome().equals(usuario) && this.getSenha().equals(senha);
+//    }
 }
