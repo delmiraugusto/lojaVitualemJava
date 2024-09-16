@@ -11,4 +11,11 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Usuario {
     private String nome;
+    private String email;
+    private String senha;
+
+@Override
+    public String toString() {
+        return "Nome: " + nome + ", Email: " + email + ", Senha: " + senha;
+    }
 }
