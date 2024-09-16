@@ -2,22 +2,21 @@ package com.loja.virtual.modelos.menu;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
+import static com.loja.virtual.modelos.gestor.CadastrarProdutos.cadastrarProdutos;
 import com.loja.virtual.modelos.gestor.Gestor;
+import static com.loja.virtual.modelos.gestor.ClienteQueMaisComprou.clienteQueMaisComprou;
+import static com.loja.virtual.modelos.gestor.ProdutosMaisVendidos.produtosMaisVendidos;
+import static com.loja.virtual.modelos.gestor.TotalPedidos.totalPedidos;
+import static com.loja.virtual.modelos.menu.LoginVerification.loginVerification;
 
 public class MenuGestor {
+    
     public static void menuGestor() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Digite o usuário do Gestor:");
-        String usuario = scanner.nextLine();
-        System.out.println("Digite a senha do Gestor:");
-        String senha = scanner.nextLine();
+        Scanner sc = new Scanner(System.in);
 
-        //Tentando buscar na classe Gestor a validação do usuario
-/*      if (Gestor.validarLogin(usuario, senha)) {
-            System.out.println("Login realizado com sucesso! Bem-vindo, " + usuario + "!");
+        // Tentando buscar na classe Gestor a validação do usuario
 
-        int opcao =-1;
+        int opcao = 1;
         do {
             try {
                 System.out.println("""
@@ -34,50 +33,25 @@ public class MenuGestor {
 
                         """);
 
-            opcao = scanner.nextInt();
-            scanner.nextLine();
+            opcao = sc.nextInt();
+            sc.nextLine();
 
             switch (opcao) {
                 case 1 -> cadastrarProdutos();
                 case 2 -> produtosMaisVendidos();
                 case 3 -> clienteQueMaisComprou();
                 case 4 -> totalPedidos();
-                case 0 -> menu_principal();
-                default -> System.out.println("Número inválido! Digite um número entre 0 e 2.");
+                case 0 -> loginVerification();
+                default -> System.out.println("Número inválido! Digite uma opção válida.");
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Erro: Entrada inválida. Por favor, insira um número.");
-                scanner.next();
+                sc.next();
             }
         } while (opcao != 0);
-    }else {
-                System.out.println("Usuário ou senha incorretos. Tente novamente.");
-            }*/
     }
 
+    
 
-//    private static void exibirMenuCompras() {
-//        System.out.println("Digite o seu login:");
-//        String usuario = scanner.nextLine();
-//        System.out.println("Digite a sua senha:");
-//        String senha = scanner.nextLine();
-//
-//
-//        //Tentando buscar na classe Cliente a validação do usuario
-//
-//    /*   if (Cliente.validarLogin(usuario, senha)) {
-//            System.out.println("Bem-vindo, " + usuario + "!");
-//        } else {
-//            System.out.println("Usuário ou senha incorretos. Tente novamente.");
-//        }*/
-//
-//        // Criar o menu do cliente
-//    }
+
 }
-
-
-
-
-
-
-
