@@ -8,6 +8,8 @@ import com.loja.virtual.modelos.gestor.Gestor;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+import static com.loja.virtual.modelos.cliente.CadastrarCliente.cadastrarCliente;
 import static com.loja.virtual.modelos.menu.MenuCliente.menuCliente;
 import static com.loja.virtual.modelos.menu.MenuGestor.menuGestor;
 
@@ -55,10 +57,10 @@ public class LoginVerification {
                         menuGestor();
                     }
                     if(role == Role.CLIENTE){
-                        menuCliente();
+                        menuCliente(user);
                     }
                 }
-                case 2 -> System.out.println("Cadastar conta");
+                case 2 -> cadastrarCliente();
             }
         }while(option != 0);
     }

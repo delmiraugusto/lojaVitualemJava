@@ -15,6 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Cliente extends Usuario implements Login {
+
     private String endereco;
     private int pontosFidelidade;
     private int codFuncionario;
