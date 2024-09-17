@@ -22,10 +22,5 @@ public class RealizarPedidos {
 
             Produto.pegarProduto(user,opt, total);
         }
-        removerProduto();{
-    }
-}
-    private static void removerProduto() {   
-        throw new UnsupportedOperationException("Unimplemented method 'removerProduto'");
     }
 }
