@@ -14,5 +14,4 @@ public class LoginController {
         return null;
     }
 
-    public String verificacao;
 }

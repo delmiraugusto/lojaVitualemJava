@@ -27,7 +27,7 @@ public class MenuCliente {
             switch (opc){
                 case 1 -> realizarPedidos(user);
                 case 2 -> consultarPedidos();
-                case 3 -> removerProduto();
+                //case 3 -> removerProduto();
                 case 0 -> System.out.println("Saindo");
             }
         }while(opc!=0);
