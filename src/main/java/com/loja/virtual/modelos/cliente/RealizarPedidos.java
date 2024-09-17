@@ -5,24 +5,27 @@ import java.util.Scanner;
 
 public class RealizarPedidos {
     public static void realizarPedidos(String user) {
-        Scanner sc = new Scanner(System.in);
-        int opt;
-        double total = 0;
-        System.out.printf("""
-                SerraTec Games
-                Usuario: %s
-                %n""", user);
-        Produto.listarProdutos();
-        System.out.println(""" 
-                
-                Escolha o jogo:
-                Digite o número referente ao jogo.
-                
-                """);
-        opt = sc.nextInt();
+        try (Scanner sc = new Scanner(System.in)) {
+            int opt;
+            double total = 0;
+            System.out.printf("""
+                    SerraTec Games
+                    Usuario: %s
+                    %n""", user);
+            Produto.listarProdutos();
+            System.out.println(""" 
+                    
+                    Escolha o jogo:
+                    Digite o número referente ao jogo.                   
+                    """);
+            opt = sc.nextInt();
 
-        //Produto.pegarProduto(user,opt, total);
-
-        //removerProduto(){}
+            Produto.pegarProduto(user,opt, total);
+        }
+        removerProduto();{
+    }
+}
+    private static void removerProduto() {   
+        throw new UnsupportedOperationException("Unimplemented method 'removerProduto'");
     }
 }
