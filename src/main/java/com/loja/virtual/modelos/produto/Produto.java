@@ -23,10 +23,11 @@ public class Produto {
 
     public static void listarProdutos() {
         for (int i = 0; i < produtos.size(); i++) {
-            System.out.printf("%d - %s -> %.2f %n",
+            System.out.printf("%d - %s -> %.2f quantidade estoque - %d %n",
                     produtos.get(i).getCodProduto(),
                     produtos.get(i).getNomeProduto(),
-                    produtos.get(i).getValorUnitario());
+                    produtos.get(i).getValorUnitario(),
+                    produtos.get(i).getQuantidadeEstoque());
         }
     }
 }

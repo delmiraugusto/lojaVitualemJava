@@ -53,16 +53,6 @@ public class LoginVerification {
                     String pass = "";
 
                     tipoLogin(user, pass);
-                    
-                    LoginController loginController = new LoginController();
-                    Role role = loginController.login(user, pass, usuarios);
-    
-                    if(role == Role.GESTOR) {
-                        menuGestor();
-                    }
-                    if(role == Role.CLIENTE){
-                        menuCliente(user);
-                    }
                   
                 }
                 case 2 -> cadastrarCliente();
@@ -117,8 +107,11 @@ public class LoginVerification {
                     for (int i = 0; i < clientes.size() && encontrado == false; i++) {
                         if(!clientes.get(i).getLogin().equals(user) && !clientes.get(i).getSenha().equals(pass)){
                             contadorLista++;
+                        }else if(!clientes.get(i).getLogin().equals(user)){
+                            contadorLista++;
+                        }else if (!clientes.get(i).getSenha().equals(pass)){
+                            contadorLista++;
                         }else{
-                            System.out.println("Acesso Liberado!");
                             encontrado = true;
                             LoginController loginController = new LoginController();
                             Role role = loginController.login(user, pass, usuarios);
@@ -160,13 +153,16 @@ public class LoginVerification {
                     for (int i = 0; i < gestores.size() && encontrado == false; i++) {
                         if(!gestores.get(i).getLogin().equals(user) && !gestores.get(i).getSenha().equals(pass)){
                             contadorLista++;
+                        }else if(!gestores.get(i).getLogin().equals(user)){
+                            contadorLista++;
+                        }else if (!gestores.get(i).getSenha().equals(pass)){
+                            contadorLista++;
                         }else{
                             System.out.println("Acesso Liberado!");
                             encontrado = true;
-
                             LoginController loginController = new LoginController();
                             Role role = loginController.login(user, pass, usuarios);
-                            if(role == Role.GESTOR) {
+                            if(role == Role.GESTOR){
                                 menuGestor();
                             }
                             return true;
