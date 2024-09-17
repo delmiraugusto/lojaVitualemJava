@@ -2,6 +2,7 @@ package com.loja.virtual.modelos.pedido;
 
 import com.loja.virtual.modelos.cliente.Cliente;
 import com.loja.virtual.modelos.produto.Produto;
+import com.loja.virtual.modelos.produto.ProdutoPedido;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,8 +21,9 @@ public class Pedido {
     private Cliente cliente;
     private long codPedido;
     private LocalDate dataPedido;
-    public static List<Produto> produtosPedido = new ArrayList<>();
-    public static List<Pedido> pedidos = new ArrayList<>();
+    public static List<ProdutoPedido> carrinho = new ArrayList<>();
+
+    public static List<Pedido> todosPedidos = new ArrayList<>();
 
     long numeroAleatorio = new Random().nextLong(1000000000);
     public void setCodPedido() {

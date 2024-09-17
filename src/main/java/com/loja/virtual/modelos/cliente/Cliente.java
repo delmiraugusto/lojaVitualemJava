@@ -10,15 +10,16 @@ import lombok.Setter;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Cliente extends Usuario implements Login {
-
-    private String endereco;
-    private int pontosFidelidade;
-    private int codFuncionario;
+    //private String endereco;
+    //private int pontosFidelidade;
+    //private int codFuncionario;
+    //private String senha;
     private Role role = Role.CLIENTE;
     private String login;
     private String senha;
@@ -43,7 +44,7 @@ public class Cliente extends Usuario implements Login {
             return false;
         }
     }
-    
+
     @Override
     public boolean acessoPermitido(String login, String senha) {
         return login.equals(this.getLogin()) && senha.equals(this.getSenha());

@@ -3,14 +3,9 @@ package com.loja.virtual.modelos.menu;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import static com.loja.virtual.modelos.gestor.CadastrarProdutos.cadastrarProdutos;
-import com.loja.virtual.modelos.gestor.Gestor;
-import static com.loja.virtual.modelos.gestor.ClienteQueMaisComprou.clienteQueMaisComprou;
-import static com.loja.virtual.modelos.gestor.ProdutosMaisVendidos.produtosMaisVendidos;
-import static com.loja.virtual.modelos.gestor.TotalPedidos.totalPedidos;
 import static com.loja.virtual.modelos.menu.LoginVerification.loginVerification;
 
 public class MenuGestor {
-    
     public static void menuGestor() {
         Scanner sc = new Scanner(System.in);
 
@@ -31,7 +26,7 @@ public class MenuGestor {
         =========================================
         Escolha uma opção:
 
-                        """);
+        """);
 
             opcao = sc.nextInt();
             sc.nextLine();
@@ -50,8 +45,4 @@ public class MenuGestor {
             }
         } while (opcao != 0);
     }
-
-    
-
-
 }

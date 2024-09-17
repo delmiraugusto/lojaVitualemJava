@@ -16,7 +16,6 @@ import static com.loja.virtual.modelos.menu.MenuGestor.menuGestor;
 
 public class LoginVerification {
     public static void loginVerification() {
-        
         Scanner scEntrada = new Scanner(System.in);
         List<Login> usuarios = new ArrayList<>();
         usuarios.addAll(Cliente.clientes);
