@@ -25,6 +25,26 @@ public class Cliente extends Usuario implements Login {
     private String senha;
     public static List<Cliente> clientes = new ArrayList<>();
 
+    public Cliente(String nome, String email, String senha, String endereco, int pontosFidelidade, int codFuncionario) {
+        super(nome, email, senha);
+        this.endereco = endereco;
+        this.pontosFidelidade = pontosFidelidade;
+        this.codFuncionario = codFuncionario;
+    }
+
+    public void adicionarPontos(int pontos) {
+        this.pontosFidelidade += pontos;
+    }
+
+    public boolean usarPontos(int pontos) {
+        if (pontos <= pontosFidelidade) {
+            this.pontosFidelidade -= pontos;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     @Override
     public boolean acessoPermitido(String login, String senha) {
         return login.equals(this.getLogin()) && senha.equals(this.getSenha());
@@ -34,28 +54,15 @@ public class Cliente extends Usuario implements Login {
     public Role getRole() {
         return role;
     }
+    
+    @Override
+    public String toString() {
+        return super.toString() + ", Endereço: " + endereco + ", Pontos de Fidelidade: " + pontosFidelidade;
+    }
 
-
-//    public void adicionarPontos(int pontos){
-//        this.pontosFidelidade += pontos;
-//    }
-//
-//    public boolean usarPontos(int pontos) {
-//        if(pontos <= pontosFidelidade) {
-//            this.pontosFidelidade -= pontos;
-//            return true;
-//        } else {
-//            return false;
-//        }
-//    }
-//    public String toString() {
-//        return super.toString() + ", Endereco: " + endereco + ", Pontos de Fidelidade: " + pontosFidelidade;
-//    }
-//
-//    public boolean validarLogin(String usuario, String senha) {
-//        return this.getNome().equals(usuario) && this.senha.equals(senha);
-//    }
-
+    public boolean validarLogin(String usuario, String senha) {
+        return this.getNome().equals(usuario) && this.getSenha().equals(senha);
+    }
 }
 
 
