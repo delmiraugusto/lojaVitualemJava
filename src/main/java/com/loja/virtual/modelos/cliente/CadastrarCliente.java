@@ -13,8 +13,6 @@ public class CadastrarCliente {
         String nome = scanner.nextLine();
         System.out.println("Digite seu email: ");
         String email = scanner.nextLine();
-        /*System.out.println("Digite endereço: ");
-        String endereco = scanner.nextLine();*/
         System.out.println("Crie uma senha: ");
         String senha = scanner.nextLine();
 

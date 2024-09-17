@@ -1,20 +1,16 @@
 package com.loja.virtual.modelos.cliente;
 
-import com.loja.virtual.Login.Login;
-import com.loja.virtual.enumeradores.Role;
-import com.loja.virtual.modelos.usuario.Usuario;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.loja.virtual.Login.Login;
+import com.loja.virtual.enumeradores.Role;
+import com.loja.virtual.modelos.usuario.Usuario;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
+import lombok.Data;
+
+
+@Data
 public class Cliente extends Usuario implements Login {
     //private String endereco;
     //private int pontosFidelidade;
@@ -30,6 +26,9 @@ public class Cliente extends Usuario implements Login {
         this.endereco = endereco;
         this.pontosFidelidade = pontosFidelidade;
         this.codFuncionario = codFuncionario;
+    }
+
+    public Cliente(){
     }
 
     public void adicionarPontos(int pontos) {

@@ -4,18 +4,13 @@ import com.loja.virtual.Login.Login;
 import com.loja.virtual.enumeradores.Role;
 import com.loja.virtual.modelos.cliente.Cliente;
 import com.loja.virtual.modelos.usuario.Usuario;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
+import lombok.Data;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
+@Data
+
 public class Gestor extends Usuario implements Login {
     private int codFuncionario;
     private String setor;

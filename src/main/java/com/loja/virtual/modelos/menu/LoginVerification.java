@@ -1,15 +1,15 @@
 package com.loja.virtual.modelos.menu;
 
-import com.loja.virtual.Login.Login;
-import com.loja.virtual.Login.LoginController;
-import com.loja.virtual.enumeradores.Role;
-import com.loja.virtual.modelos.cliente.Cliente;
-import com.loja.virtual.modelos.gestor.Gestor;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import com.loja.virtual.Login.Login;
+import com.loja.virtual.Login.LoginController;
+import com.loja.virtual.enumeradores.Role;
 import static com.loja.virtual.modelos.cliente.CadastrarCliente.cadastrarCliente;
+import com.loja.virtual.modelos.cliente.Cliente;
+import com.loja.virtual.modelos.gestor.Gestor;
 import static com.loja.virtual.modelos.menu.MenuCliente.menuCliente;
 import static com.loja.virtual.modelos.menu.MenuGestor.menuGestor;
 
@@ -49,6 +49,7 @@ public class LoginVerification {
 
                     System.out.println("Digite sua senha:");
                     String pass = scEntrada.nextLine();
+                    verificacao();
 
                     LoginController loginController = new LoginController();
                     Role role = loginController.login(user, pass, usuarios);
