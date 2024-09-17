@@ -2,15 +2,12 @@ package com.loja.virtual.modelos.gestor;
 
 import com.loja.virtual.Login.Login;
 import com.loja.virtual.enumeradores.Role;
-import com.loja.virtual.modelos.cliente.Cliente;
 import com.loja.virtual.modelos.usuario.Usuario;
-
 import java.util.ArrayList;
 import java.util.List;
 import lombok.Data;
 
 @Data
-
 public class Gestor extends Usuario implements Login {
     private int codFuncionario;
     private String setor;
@@ -28,8 +25,4 @@ public class Gestor extends Usuario implements Login {
     public Role getRole() {
         return role;
     }
-
-//    public boolean validarLogin(String usuario, String senha) {
-//        return this.getNome().equals(usuario) && this.getSenha().equals(senha);
-//    }
 }

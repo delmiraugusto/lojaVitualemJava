@@ -3,7 +3,6 @@ package com.loja.virtual.modelos.menu;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
 import com.loja.virtual.Login.Login;
 import com.loja.virtual.Login.LoginController;
 import com.loja.virtual.enumeradores.Role;
@@ -47,8 +46,7 @@ public class LoginVerification {
 
                     System.out.println("Digite sua senha:");
                     String pass = scEntrada.nextLine();
-                    //verificacao();
-
+            //        //verificacao();
                     LoginController loginController = new LoginController();
                     Role role = loginController.login(user, pass, usuarios);
 

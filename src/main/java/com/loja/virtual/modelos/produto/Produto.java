@@ -23,11 +23,4 @@ public class Produto {
             );
         }
     }
-    public static void removerProduto(int codProduto) {
-    }
-
-    public static void pegarProduto(String user, int opt, double total) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'pegarProduto'");
-    }
 }
