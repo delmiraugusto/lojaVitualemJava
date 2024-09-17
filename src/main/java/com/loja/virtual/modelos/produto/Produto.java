@@ -1,26 +1,19 @@
 package com.loja.virtual.modelos.produto;
 
-import com.loja.virtual.modelos.cliente.Cliente;
-import com.loja.virtual.modelos.pedido.Pedido;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
+import com.loja.virtual.modelos.cliente.Cliente;
 import static com.loja.virtual.modelos.cliente.Cliente.clientes;
+import com.loja.virtual.modelos.pedido.Pedido;
 import static com.loja.virtual.modelos.pedido.Pedido.pedidos;
 import static com.loja.virtual.modelos.pedido.Pedido.produtosPedido;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
+import lombok.Data;
+
+@Data
 public class Produto {
     private int codProduto;
     private String nomeProduto;

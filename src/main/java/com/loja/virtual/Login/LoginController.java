@@ -1,8 +1,8 @@
 package com.loja.virtual.Login;
 
-import com.loja.virtual.enumeradores.Role;
-
 import java.util.List;
+
+import com.loja.virtual.enumeradores.Role;
 
 public class LoginController {
     public Role login(String usuario, String senha, List<Login> usuarios) {
@@ -13,4 +13,6 @@ public class LoginController {
         }
         return null;
     }
+
+    public void verificacao
 }

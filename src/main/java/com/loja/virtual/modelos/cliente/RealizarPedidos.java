@@ -1,7 +1,8 @@
 package com.loja.virtual.modelos.cliente;
 
-import com.loja.virtual.modelos.produto.Produto;
 import java.util.Scanner;
+
+import com.loja.virtual.modelos.produto.Produto;
 
 public class RealizarPedidos {
     public static void realizarPedidos(String user) {
@@ -21,5 +22,7 @@ public class RealizarPedidos {
                 """);
         opt = sc.nextInt();
         Produto.pegarProduto(user,opt, total);
+
+        removerProduto(){
     }
 }
