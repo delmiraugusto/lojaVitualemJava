@@ -26,8 +26,7 @@ public class Produto {
             System.out.printf("%d - %s -> %.2f %n",
                     produtos.get(i).getCodProduto(),
                     produtos.get(i).getNomeProduto(),
-                    produtos.get(i).getValorUnitario()
-            );
+                    produtos.get(i).getValorUnitario());
         }
     }
 }

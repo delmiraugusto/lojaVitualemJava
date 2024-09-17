@@ -26,7 +26,7 @@ public class MenuCliente {
             opc = mCliente.nextInt();
             switch (opc){
                 case 1 -> realizarPedidos(user);
-                case 2 -> consultarPedidos();
+                case 2 -> consultarPedidos(user);
                 //case 3 -> removerProduto();
                 case 0 -> System.out.println("Saindo");
             }

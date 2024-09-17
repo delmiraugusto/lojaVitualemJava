@@ -1,7 +1,6 @@
 package com.loja.virtual.modelos.pedido;
 
 import com.loja.virtual.modelos.cliente.Cliente;
-import com.loja.virtual.modelos.produto.Produto;
 import com.loja.virtual.modelos.produto.ProdutoPedido;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
