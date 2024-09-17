@@ -3,9 +3,11 @@ package com.loja.virtual.modelos.cliente;
 import com.loja.virtual.modelos.produto.Produto;
 import java.util.Scanner;
 
+import static com.loja.virtual.modelos.produto.PegarProduto.pegarProduto;
+
 public class RealizarPedidos {
     public static void realizarPedidos(String user) {
-        try (Scanner sc = new Scanner(System.in)) {
+        Scanner scRP = new Scanner(System.in);
             int opt;
             double total = 0;
             System.out.printf("""
@@ -16,16 +18,9 @@ public class RealizarPedidos {
             System.out.println(""" 
                     
                     Escolha o jogo:
-                    Digite o número referente ao jogo.                   
+                    Digite o número referente ao jogo.
                     """);
-            opt = sc.nextInt();
-
-            Produto.pegarProduto(user,opt, total);
-        }
-        removerProduto();{
-    }
-}
-    private static void removerProduto() {   
-        throw new UnsupportedOperationException("Unimplemented method 'removerProduto'");
+            opt = scRP.nextInt();
+            pegarProduto(user,opt, total);
     }
 }

@@ -8,9 +8,6 @@ import static com.loja.virtual.modelos.menu.LoginVerification.loginVerification;
 public class MenuGestor {
     public static void menuGestor() {
         Scanner sc = new Scanner(System.in);
-
-        // Tentando buscar na classe Gestor a validação do usuario
-
         int opcao = 1;
         do {
             try {
@@ -27,10 +24,8 @@ public class MenuGestor {
         Escolha uma opção:
 
         """);
-
             opcao = sc.nextInt();
             sc.nextLine();
-
             switch (opcao) {
                 case 1 -> cadastrarProdutos();
 //                case 2 -> produtosMaisVendidos();

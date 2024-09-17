@@ -25,31 +25,31 @@ public class PegarProduto {
                         Pedido.todosPedidos.add(pedido);
                         System.out.println("Carrinho:");
                     }
-                    for(int k = 0; k < carrinho.size(); k++) {
-                        System.out.printf("""
-                                    %d - %s -> %.2f quant.: %d
-                                    """,
-                                k+1,
-                                carrinho
-                                        .get(k)
-                                        .getProduto()
-                                        .getNomeProduto(),
-                                carrinho
-                                        .get(k).
-                                        getProduto().
-                                        getValorUnitario(),
-                                carrinho
-                                        .get(k)
-                                        .getQuantidade()
-                        );
-                        total += carrinho.
-                                get(k).
-                                getProduto().
-                                getValorUnitario();
-                    }
-                    System.out.println("\nTotal: \n"+total);
                 }
             }
         }
+        for(int k = 0; k < carrinho.size(); k++) {
+            System.out.printf("""
+                                    %d - %s -> %.2f quant.: %d
+                                    """,
+                    k+1,
+                    carrinho
+                            .get(k)
+                            .getProduto()
+                            .getNomeProduto(),
+                    carrinho
+                            .get(k).
+                            getProduto().
+                            getValorUnitario(),
+                    carrinho
+                            .get(k)
+                            .getQuantidade()
+            );
+            total += carrinho.
+                    get(k).
+                    getProduto().
+                    getValorUnitario();
+        }
+        System.out.println("\nTotal: \n"+total);
     }
 }
