@@ -13,20 +13,18 @@ import com.loja.virtual.modelos.gestor.Gestor;
 import static com.loja.virtual.modelos.menu.MenuCliente.menuCliente;
 import static com.loja.virtual.modelos.menu.MenuGestor.menuGestor;
 
-
 public class LoginVerification {
     public static void loginVerification() {
         Scanner scEntrada = new Scanner(System.in);
-        List<Login> usuarios = new ArrayList<>();
-        usuarios.addAll(Cliente.clientes);
-        usuarios.addAll(Gestor.gestores);
-
         Gestor gestor = new Gestor();
         gestor.setLogin("admin");
         gestor.setSenha("123");
 
         int option;
         do{
+            List<Login> usuarios = new ArrayList<>();
+            usuarios.addAll(Cliente.clientes);
+            usuarios.addAll(Gestor.gestores);
             System.out.println("""
         ====================================
         |         MENU PRINCIPAL           |
@@ -49,7 +47,7 @@ public class LoginVerification {
 
                     System.out.println("Digite sua senha:");
                     String pass = scEntrada.nextLine();
-                    verificacao();
+                    //verificacao();
 
                     LoginController loginController = new LoginController();
                     Role role = loginController.login(user, pass, usuarios);

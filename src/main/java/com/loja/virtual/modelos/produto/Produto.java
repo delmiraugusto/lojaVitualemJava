@@ -1,18 +1,7 @@
 package com.loja.virtual.modelos.produto;
 
-
-import java.time.LocalDate;
-
 import java.util.ArrayList;
 import java.util.List;
-
-
-import com.loja.virtual.modelos.cliente.Cliente;
-import static com.loja.virtual.modelos.cliente.Cliente.clientes;
-import com.loja.virtual.modelos.pedido.Pedido;
-import static com.loja.virtual.modelos.pedido.Pedido.pedidos;
-import static com.loja.virtual.modelos.pedido.Pedido.produtosPedido;
-
 import lombok.Data;
 
 @Data
@@ -34,9 +23,7 @@ public class Produto {
             );
         }
     }
-
     public static void removerProduto(int codProduto) {
-
     }
 
     public static void pegarProduto(String user, int opt, double total) {
