@@ -33,9 +33,9 @@ public class MenuGestor {
 
             switch (opcao) {
                 case 1 -> cadastrarProdutos();
-                case 2 -> produtosMaisVendidos();
-                case 3 -> clienteQueMaisComprou();
-                case 4 -> totalPedidos();
+//                case 2 -> produtosMaisVendidos();
+//                case 3 -> clienteQueMaisComprou();
+//                case 4 -> totalPedidos();
                 case 0 -> loginVerification();
                 default -> System.out.println("Número inválido! Digite uma opção válida.");
                 }

@@ -6,7 +6,6 @@ import static com.loja.virtual.modelos.cliente.Cliente.clientes;
 
 public class CadastrarCliente {
     public static void cadastrarCliente() {
-
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Digite seu nome: ");
@@ -16,11 +15,10 @@ public class CadastrarCliente {
         System.out.println("Crie uma senha: ");
         String senha = scanner.nextLine();
 
-        Cliente cliente = new Cliente();
-        cliente.setNome(nome);
-        cliente.setLogin(email);
-        cliente.setSenha(senha);
-        clientes.add(cliente);
+        Cliente cliente2 = new Cliente();
+        cliente2.setNome(nome);
+        cliente2.setLogin(email);
+        cliente2.setSenha(senha);
+        clientes.add(cliente2);
     }
-
-    }
+}
