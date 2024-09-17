@@ -51,8 +51,7 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 # Clone este repositório
 $ git clone https://github.com/delmiraugusto/lojaVitualemJava.git
 
-# Acesse a pasta do projeto no terminal
-$ cd ./Vaughan-labe-food5
+# Abra a pasta do Projeto na IDE de sua preferência
 
 # Instale as dependências
 $ mvn install
