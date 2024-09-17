@@ -2,8 +2,10 @@ package com.loja.virtual.modelos.menu;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
 import static com.loja.virtual.modelos.gestor.CadastrarProdutos.cadastrarProdutos;
 import static com.loja.virtual.modelos.menu.LoginVerification.loginVerification;
+import static com.loja.virtual.modelos.produto.Produto.listarProdutos;
 
 public class MenuGestor {
     public static void menuGestor() {
@@ -28,9 +30,11 @@ public class MenuGestor {
             sc.nextLine();
             switch (opcao) {
                 case 1 -> cadastrarProdutos();
- //               case 2 -> produtosMaisVendidos();
-   //             case 3 -> exibirTodos();
-     //           case 4 -> totalPedidos();
+ //             case 2 -> produtosMaisVendidos();
+   //           case 3 -> exibirTodos();
+     //         case 4 -> totalPedidos();
+                case 5 -> listarProdutos();
+
                 case 0 -> loginVerification();
                 default -> System.out.println("Número inválido! Digite uma opção válida.");
                 }
