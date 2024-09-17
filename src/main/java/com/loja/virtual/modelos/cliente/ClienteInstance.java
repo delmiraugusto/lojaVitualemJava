@@ -9,7 +9,5 @@ public class ClienteInstance {
         cliente1.setLogin("rafa");
         cliente1.setSenha("123");
         clientes.add(cliente1);
-
-        
     }
 }
