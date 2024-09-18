@@ -22,7 +22,7 @@ public class MenuCliente {
         ====================================
         |              Loja                |
         ====================================
-                   usuario: %s             
+                   usuario: %s
         | 1 - Comprar                      |
         | 2 - Consultar Pedidos            |
         | 3 - Remover Produto              |
