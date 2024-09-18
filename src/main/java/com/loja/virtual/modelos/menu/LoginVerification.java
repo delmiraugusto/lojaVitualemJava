@@ -42,9 +42,7 @@ public class LoginVerification {
         | (Cadastrar uma nova conta)       |
         | 0 - Sair                         |
         ====================================
-        Escolha uma opção:
-
-        """);
+        Escolha uma opção:""");
             option = scEntrada.nextInt();
             scEntrada.nextLine();
             switch (option){

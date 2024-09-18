@@ -7,7 +7,7 @@ import java.util.Scanner;
 import static com.loja.virtual.modelos.produto.RemoverProdutoCarrinho.removerProdutoCarrinho;
 import static com.loja.virtual.modelos.cliente.ConsultaPedidos.consultarPedidos;
 import static com.loja.virtual.modelos.cliente.RealizarPedidos.realizarPedidos;
-
+import static com.loja.virtual.modelos.produto.FinalizarCompra.finalizarCompra;
 
 public class MenuCliente {
     public static void menuCliente(String user) {
@@ -26,11 +26,11 @@ public class MenuCliente {
         | 1 - Comprar                      |
         | 2 - Consultar Pedidos            |
         | 3 - Remover Produto              |
+        | 4 - Finalizar Compra             |
         | 0 - Sair                         |
         ====================================
-        Escolha uma opção:
-
-        """, user);
+        Escolha uma opção:""",
+        user);
             opc = mCliente.nextInt();
 
             switch (opc) {
@@ -41,6 +41,7 @@ public class MenuCliente {
                     int codProduto = mCliente.nextInt();
                     removerProdutoCarrinho ( user, codProduto);
                 }
+                case 4 -> finalizarCompra();
                 case 0 -> System.out.println("Saindo");
             }
         } while (opc != 0);
