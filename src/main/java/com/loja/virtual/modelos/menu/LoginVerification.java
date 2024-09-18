@@ -34,6 +34,7 @@ public class LoginVerification {
         do{
             try {
                 System.out.println("""
+                        
                         ====================================
                         |         MENU PRINCIPAL           |
                         ====================================
@@ -68,6 +69,7 @@ public class LoginVerification {
         do{
             try {
                 System.out.println("""
+
                         ======================
                         |1 - Cliente         |
                         |2 - Gestor          |
@@ -134,8 +136,7 @@ public class LoginVerification {
                         contador--;
                         System.out.println("Tentativas restantes: " + contador);
                         contadorLista = 0;
-                    }
-                   
+                    }  
                 }
                 
             }while(contador > 0);
@@ -182,8 +183,7 @@ public class LoginVerification {
                         contador--;
                         System.out.println("Tentativas restantes: " + contador);
                         contadorLista = 0;
-                    }
-                   
+                    }    
                 }
                 
             }while(contador > 0);
