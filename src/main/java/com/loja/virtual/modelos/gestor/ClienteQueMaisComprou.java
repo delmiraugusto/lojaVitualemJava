@@ -1,32 +1,20 @@
 package com.loja.virtual.modelos.gestor;
 
+import com.loja.virtual.modelos.pedido.Pedido;
+import com.loja.virtual.modelos.produto.ProdutoPedido;
+
 import java.util.*;
 
+import static com.loja.virtual.modelos.pedido.Pedido.pedidosFinalizados;
+import static com.loja.virtual.modelos.pedido.Pedido.todosPedidos;
+
 public class ClienteQueMaisComprou {
-    private Map<String, Double> comprasPorCliente;
-
-    public ClienteQueMaisComprou() {
-        this.comprasPorCliente = new HashMap<>();
-    }
-
-    public void adicionarCompra(String cliente, double valorCompra) {
-        comprasPorCliente.put(cliente, comprasPorCliente.getOrDefault(cliente, 0.0) + valorCompra);
-    }
-
-    public double getTotalCompras(String cliente) {
-        return comprasPorCliente.getOrDefault(cliente, 0.0);
-    }
-
-    public String getClienteComMaisCompras() {
-        return comprasPorCliente.entrySet().stream()
-                .max(Comparator.comparingDouble(Map.Entry::getValue))
-                .map(Map.Entry::getKey)
-                .orElse(null);
-    }
-
-    public void exibirTodos() {
-        comprasPorCliente.forEach((cliente, total) -> 
-            System.out.println("Cliente: " + cliente + ", Total comprado: " + total)
-        );
+    public static void clienteQueMaisComprou() {
+//        int contador = 0;
+//        for (ProdutoPedido produtoPedido : pedidosFinalizados) {
+//            System.out.println(produtoPedido.getPedido().getCliente().getNome());
+//            System.out.println(produtoPedido.getPedido().getQuantidadePedidos());
+//        }
+//        System.out.println(contador);
     }
 }
