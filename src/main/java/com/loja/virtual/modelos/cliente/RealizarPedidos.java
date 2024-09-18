@@ -15,8 +15,8 @@ public class RealizarPedidos {
                     Usuario: %s
                     %n""", user);
                 Produto.listarProdutos();
-                System.out.println(""" 
-                    
+                System.out.println("""
+
                     Escolha o jogo:
                     Digite o número referente ao jogo.
                     """);

@@ -36,7 +36,10 @@ public class ConsultaPedidos {
             System.out.printf("""
                     %d - %s -> %.2f quant.: %d
                     """,
-                    k + 1,
+                    carrinho
+                            .get(k)
+                            .getProduto()
+                            .getCodProduto(),
                     carrinho
                             .get(k)
                             .getProduto()
