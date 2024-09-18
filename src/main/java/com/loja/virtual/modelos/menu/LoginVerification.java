@@ -1,6 +1,7 @@
 package com.loja.virtual.modelos.menu;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -29,60 +30,72 @@ public class LoginVerification {
         usuarios.addAll(Cliente.clientes);
         usuarios.addAll(Gestor.gestores);
 
-        int option;
+        int option = 1;
         do{
-            
-            System.out.println("""
-        ====================================
-        |         MENU PRINCIPAL           |
-        ====================================
-        | 1 - Login                        |
-        |(Caso já possua conta)            |
-        | 2 - Cadastrar                    |
-        | (Cadastrar uma nova conta)       |
-        | 0 - Sair                         |
-        ====================================
-        Escolha uma opção:""");
-            option = scEntrada.nextInt();
-            scEntrada.nextLine();
-            switch (option){
-                case 1 -> {
-                    String user = "";
-                    String pass = "";
+            try {
+                System.out.println("""
+                        ====================================
+                        |         MENU PRINCIPAL           |
+                        ====================================
+                        | 1 - Login                        |
+                        |(Caso já possua conta)            |
+                        | 2 - Cadastrar                    |
+                        | (Cadastrar uma nova conta)       |
+                        | 0 - Sair                         |
+                        ====================================
+                        Escolha uma opção:""");
+                option = scEntrada.nextInt();
+                scEntrada.nextLine();
+                switch (option) {
+                    case 1 -> {
+                        String user = "";
+                        String pass = "";
 
-                    tipoLogin(user, pass);
-                  
+                        tipoLogin(user, pass);
+
+                    }
+                    case 2 -> cadastrarCliente();
                 }
-                case 2 -> cadastrarCliente();
+            }catch (InputMismatchException e) {
+                    System.out.println("Erro: Entrada inválida. Por favor, insira um número.");
+                    loginVerification();
+                    scEntrada.next();
             }
         }while(option != 0);
     }
 
     public static void tipoLogin(String user, String pass){
-        int numero;
+        int numero = 1;
         do{
-            System.out.println("""
-        ====================================
-        |           1 - Cliente            |
-        |           2 - Gestor             |
-        |           0 - Sair               |
-        ====================================
-        Escolha uma opção:
-
-        """);
-            numero = scEntrada.nextInt();
-            switch (numero) {
-                case 1:
-                    verificacaoCliente(user, pass);
-                    break;
-                case 2:
-                    verificacaoGestor(user, pass);
-                    break;
-                case 0:
-                    System.out.println("Programa Saindo");
-                    break;
-                default:
-                    System.out.println("Número Inválido");;
+            try {
+                System.out.println("""
+                        ====================================
+                        |           1 - Cliente            |
+                        |           2 - Gestor             |
+                        |           0 - Sair               |
+                        ====================================
+                        Escolha uma opção:
+                        
+                        """);
+                numero = scEntrada.nextInt();
+                switch (numero) {
+                    case 1:
+                        verificacaoCliente(user, pass);
+                        break;
+                    case 2:
+                        verificacaoGestor(user, pass);
+                        break;
+                    case 0:
+                        System.out.println("Programa Saindo");
+                        break;
+                    default:
+                        System.out.println("Número Inválido");
+                        ;
+                }
+            }catch (InputMismatchException e) {
+                System.out.println("Erro: Entrada inválida. Por favor, insira um número.");
+                loginVerification();
+                scEntrada.next();
             }
         }while(numero != 0);
     }

@@ -14,10 +14,11 @@ public class MenuGestor {
         int opcao = 1;
         do {
             try {
-                System.out.println("""
+                System.out.printf("""
         =========================================
         |          MENU ADMINISTRATIVO          |
         =========================================
+                      Gestor: %s
         | 1 - Cadastrar Produto                 |
         | 2 - Produtos Mais Vendidos            |
         | 3 - Cliente Que Mais Comprou          |
@@ -26,8 +27,8 @@ public class MenuGestor {
         | 0 - Voltar                            |
         =========================================
         Escolha uma opção:
-
-        """);
+        %n
+        """,user);
             opcao = sc.nextInt();
             sc.nextLine();
             switch (opcao) {
@@ -41,6 +42,7 @@ public class MenuGestor {
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Erro: Entrada inválida. Por favor, insira um número.");
+
                 sc.next();
             }
         } while (opcao != 0);

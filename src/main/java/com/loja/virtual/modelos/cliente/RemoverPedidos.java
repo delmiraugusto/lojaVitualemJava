@@ -1,13 +1,14 @@
 package com.loja.virtual.modelos.cliente;
 
 import com.loja.virtual.modelos.produto.Produto;
+
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class RemoverPedidos {
-
     public static void removerPedido(String user) {
         Scanner scanner = new Scanner(System.in);
-        int opt;
+        int opt = 0;
 
         System.out.printf("""
                 SerraTec Games
@@ -21,8 +22,13 @@ public class RemoverPedidos {
                 Escolha o código do jogo que deseja remover:
                 Digite o número referente ao código do jogo:
                 """);
-        opt = scanner.nextInt();
-
+        try {
+            opt = scanner.nextInt();
+        }catch (InputMismatchException e) {
+            System.out.println("Erro: Entrada inválida. Por favor, insira um número.");
+            removerPedido(user);
+            scanner.next();
+        }
         // Chama o método para remover o produto com base no código do produto
         removerProduto(opt);
     }
