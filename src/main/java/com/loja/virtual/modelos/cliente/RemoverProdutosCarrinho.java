@@ -15,8 +15,8 @@ public class RemoverProdutosCarrinho {
             |          SERRATEC GAMES          |
             ====================================
             | USUÁRIO: %s                      |
-            | %n                               |
-            |__________________________________|""", user);                    
+            | %n                               
+            """, user);                    
         Produto.listarProdutos();
         System.out.println("""
 

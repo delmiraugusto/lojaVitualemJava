@@ -14,7 +14,7 @@ public class Pedido {
     private Cliente cliente;
     private long codPedido;
     private LocalDate dataPedido;
-    //public static int quantidadePedidos;
+    
     public static List<ProdutoPedido> carrinho = new ArrayList<>();
 
     public static List<Pedido> todosPedidos = new ArrayList<>();
@@ -25,7 +25,7 @@ public class Pedido {
     }
     public static void finalizarCompra() {
         pedidosFinalizados.addAll(carrinho);
-        //quantidadePedidos = quantidadePedidos + 1;
+        
         carrinho.clear();
     }
 }

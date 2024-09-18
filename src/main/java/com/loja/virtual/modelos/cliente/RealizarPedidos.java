@@ -15,9 +15,9 @@ public class RealizarPedidos {
             ====================================
             |          SERRATEC GAMES          |
             ====================================
-            | USUÁRIO: %s                      |
-            | %n                               |
-            |__________________________________|""", user);
+            | USUÁRIO: %s                      
+            | %n                               
+            """, user);
                 Produto.listarProdutos();
                 System.out.println("""
                     

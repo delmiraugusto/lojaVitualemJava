@@ -22,7 +22,6 @@ public class PegarProduto {
                         pp.setQuantidade(1);
                         pp.setPedido(pedido);
                         carrinho.add(pp);
-                        //Pedido.todosPedidos.add(pedido);
                         System.out.println("Carrinho:");
                     }
                 }

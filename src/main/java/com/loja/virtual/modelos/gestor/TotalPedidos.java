@@ -32,6 +32,6 @@ public class TotalPedidos {
             System.out.println("Total: " + total + "\n");
         }
         System.out.println("Total de pedidos: " + contador);
-        System.out.println("Total de vendas: " + totalTotal);
+        System.out.println("Total de vendas: " +String.format("%.2f", totalTotal));
     }
 }
