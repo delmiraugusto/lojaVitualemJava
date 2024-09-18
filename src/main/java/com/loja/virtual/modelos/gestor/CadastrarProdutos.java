@@ -26,7 +26,6 @@ public class CadastrarProdutos {
         String dataFabricao = sc.nextLine();
         jogo.setDataFabricacao(dataFabricao);
 
-
         try {
             System.out.print("Insira a Quantidade de estoque: ");
             int estoque = sc.nextInt();
