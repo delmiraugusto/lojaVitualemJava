@@ -4,11 +4,12 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import static com.loja.virtual.modelos.gestor.CadastrarProdutos.cadastrarProdutos;
+import static com.loja.virtual.modelos.gestor.TotalPedidos.totalPedidos;
 import static com.loja.virtual.modelos.menu.LoginVerification.loginVerification;
 import static com.loja.virtual.modelos.produto.Produto.listarProdutos;
 
 public class MenuGestor {
-    public static void menuGestor() {
+    public static void menuGestor(String user) {
         Scanner sc = new Scanner(System.in);
         int opcao = 1;
         do {
@@ -33,7 +34,7 @@ public class MenuGestor {
                 case 1 -> cadastrarProdutos();
                 //case 2 -> produtosMaisVendidos();
                 //case 3 -> exibirTodos();
-                //case 4 -> totalPedidos();
+                case 4 -> totalPedidos(user);
                 case 5 -> listarProdutos();
                 case 0 -> loginVerification();
                 default -> System.out.println("Número inválido! Digite uma opção válida.");

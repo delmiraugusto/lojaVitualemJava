@@ -161,7 +161,7 @@ public class LoginVerification {
                             LoginController loginController = new LoginController();
                             Role role = loginController.login(user, pass, usuarios);
                             if(role == Role.GESTOR){
-                                menuGestor();
+                                menuGestor(user);
                             }
                             return true;
                         }

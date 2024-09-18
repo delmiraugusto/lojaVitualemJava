@@ -1,5 +1,7 @@
 package com.loja.virtual.modelos.produto;
 
+import com.loja.virtual.modelos.pedido.Pedido;
+
 import static com.loja.virtual.modelos.pedido.Pedido.carrinho;
 import static com.loja.virtual.modelos.produto.Produto.produtos;
 
@@ -15,8 +17,8 @@ public class FinalizarCompra {
 
     for(int k = 0; k < carrinho.size(); k++) {
         System.out.printf("""
-                                %d - %s -> %.2f quant.: %d
-                                """,
+                          %d - %s -> %.2f quant.: %d
+                          """,
                 carrinho
                         .get(k)
                         .getProduto()
@@ -34,23 +36,35 @@ public class FinalizarCompra {
                         .getQuantidade()
         );
         for (int index = 0; index < produtos.size(); index++) {
-            if( carrinho
+            if(
+            carrinho
             .get(k)
             .getProduto()
-            .getNomeProduto()== produtos.get(index).getNomeProduto()) {
-            produtos.get(index).setQuantidadeEstoque(produtos.get(index).getQuantidadeEstoque()-1);
+            .getNomeProduto() == produtos.get(index).getNomeProduto()
+            )
+            {
+                produtos
+                .get(index)
+                .setQuantidadeEstoque
+                            (
+                                produtos
+                                .get(index)
+                                .getQuantidadeEstoque()-1
+                            );
+            }
         }
-    }
         total += carrinho.
                 get(k).
                 getProduto().
                 getValorUnitario();
     }
     System.out.println("\nTotal: \n"+total);
+    Pedido.finalizarCompra();
     System.out.println("Compra finalizada com sucesso!");
-    for (int index = 0; index < carrinho.size(); index++) {
-            carrinho.removeAll(carrinho);
-        }
+//    for (int index = 0; index < carrinho.size(); index++) {
+//            carrinho.removeAll(carrinho);
+//        }
+
     }
 }
 

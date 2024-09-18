@@ -18,19 +18,19 @@ public class MenuCliente {
         do {
 
             System.out.printf("""
-
-        ====================================
-        |              Loja                |
-        ====================================
-                   usuario: %s
-        | 1 - Comprar                      |
-        | 2 - Consultar Pedidos            |
-        | 3 - Remover Produto              |
-        | 4 - Finalizar Compra             |
-        | 0 - Sair                         |
-        ====================================
-        Escolha uma opção:""",
-        user);
+                            
+                            ====================================
+                            |              Loja                |
+                            ====================================
+                                       usuario: %s
+                            | 1 - Comprar                      |
+                            | 2 - Consultar Pedidos            |
+                            | 3 - Remover Produto              |
+                            | 4 - Finalizar Compra             |
+                            | 0 - Sair                         |
+                            ====================================
+                            Escolha uma opção:""",
+                    user);
             opc = mCliente.nextInt();
 
             switch (opc) {
@@ -39,12 +39,11 @@ public class MenuCliente {
                 case 3 -> {
                     System.out.println("Digite o código do produto que deseja remover: ");
                     int codProduto = mCliente.nextInt();
-                    removerProdutoCarrinho ( user, codProduto);
+                    removerProdutoCarrinho(user, codProduto);
                 }
                 case 4 -> finalizarCompra();
                 case 0 -> System.out.println("Saindo");
             }
         } while (opc != 0);
-
     }
-
+}
