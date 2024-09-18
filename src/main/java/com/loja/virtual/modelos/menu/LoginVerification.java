@@ -58,6 +58,7 @@ public class LoginVerification {
                 }
             }catch (InputMismatchException e) {
                     System.out.println("Erro: Entrada inválida. Por favor, insira um número.");
+                    loginVerification();
                     scEntrada.next();
             }
         }while(option != 0);
@@ -68,11 +69,11 @@ public class LoginVerification {
         do{
             try {
                 System.out.println("""
-                        ======================
-                        |1 - Cliente         |
-                        |2 - Gestor          |
-                        |0 - Sair            |
-                        ======================
+                        ====================================
+                        |           1 - Cliente            |
+                        |           2 - Gestor             |
+                        |           0 - Sair               |
+                        ====================================
                         Escolha uma opção:
                         
                         """);
@@ -89,9 +90,11 @@ public class LoginVerification {
                         break;
                     default:
                         System.out.println("Número Inválido");
+                        ;
                 }
             }catch (InputMismatchException e) {
                 System.out.println("Erro: Entrada inválida. Por favor, insira um número.");
+                loginVerification();
                 scEntrada.next();
             }
         }while(numero != 0);

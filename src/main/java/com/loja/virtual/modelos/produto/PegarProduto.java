@@ -12,13 +12,13 @@ public class PegarProduto {
     public static void pegarProduto(String user, int opt, double total) {
         Pedido pedido = new Pedido();
         ProdutoPedido pp = new ProdutoPedido();
-        for (Produto produto : produtos) {
-            if (produto.getCodProduto() == opt) {
-                for (Cliente c : clientes) {
-                    if (Objects.equals(c.getLogin(), user)) {
+        for (int i = 0; i < produtos.size(); i++) {
+            if (produtos.get(i).getCodProduto() == opt) {
+                for(Cliente c : clientes) {
+                    if(Objects.equals(c.getLogin(), user)) {
                         pedido.setCliente(c);
                         pedido.setDataPedido(LocalDate.now());
-                        pp.setProduto(produto);
+                        pp.setProduto(produtos.get(i));
                         pp.setQuantidade(1);
                         pp.setPedido(pedido);
                         carrinho.add(pp);
@@ -28,26 +28,28 @@ public class PegarProduto {
                 }
             }
         }
-        for (ProdutoPedido produtoPedido : carrinho) {
+        for(int k = 0; k < carrinho.size(); k++) {
             System.out.printf("""
-                            %d - %s -> %.2f quant.: %d
-                            """,
-                    produtoPedido
+                                    %d - %s -> %.2f quant.: %d
+                                    """,
+                    carrinho
+                            .get(k)
                             .getProduto()
-                            .getCodProduto()
-                    ,
-                    produtoPedido
+                            .getCodProduto(),
+                    carrinho
+                            .get(k)
                             .getProduto()
-                            .getNomeProduto()
-                    ,
-                    produtoPedido.
+                            .getNomeProduto(),
+                    carrinho
+                            .get(k).
                             getProduto().
-                            getValorUnitario()
-                    ,
-                    produtoPedido
+                            getValorUnitario(),
+                    carrinho
+                            .get(k)
                             .getQuantidade()
             );
-            total += produtoPedido.
+            total += carrinho.
+                    get(k).
                     getProduto().
                     getValorUnitario();
         }

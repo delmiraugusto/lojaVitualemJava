@@ -5,8 +5,8 @@ import com.loja.virtual.modelos.produto.Produto;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class RemoverProdutosCarrinho {
-    public static void removerProdutoCarrinho(String user) {
+public class RemoverPedidos {
+    public static void removerPedido(String user) {
         Scanner scanner = new Scanner(System.in);
         int opt = 0;
 
@@ -26,15 +26,17 @@ public class RemoverProdutosCarrinho {
             opt = scanner.nextInt();
         }catch (InputMismatchException e) {
             System.out.println("Erro: Entrada inválida. Por favor, insira um número.");
-            removerProdutoCarrinho(user);
+            removerPedido(user);
             scanner.next();
         }
         // Chama o método para remover o produto com base no código do produto
         removerProduto(opt);
     }
+
     // Método para remover o produto da lista usando o código do produto
     private static void removerProduto(int codProduto) {
         Produto produtoRemover = null;
+
         // Procura o produto pelo código
         for (Produto produto : Produto.produtos) {
             if (produto.getCodProduto() == codProduto) {
@@ -42,6 +44,7 @@ public class RemoverProdutosCarrinho {
                 break;
             }
         }
+
         // Se encontrar o produto, remove
         if (produtoRemover != null) {
             Produto.produtos.remove(produtoRemover);

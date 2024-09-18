@@ -1,37 +1,36 @@
 package com.loja.virtual.modelos.gestor;
 
-
+import com.loja.virtual.modelos.pedido.Pedido;
 import com.loja.virtual.modelos.produto.ProdutoPedido;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import static com.loja.virtual.modelos.pedido.Pedido.*;
 
 public class TotalPedidos {
     public static void totalPedidos(String user) {
         int contador = 0;
-        double total = 0.0;
-        double totalTotal = 0.0;
-        for (ProdutoPedido produtoPedidoC : pedidosFinalizados) {
+        double total = 0;
+        for (Pedido pedido : todosPedidos) {
             contador++;
             System.out.printf("""
                     Nome : %s
                     Data do Pedido: %s
-                    """,produtoPedidoC.getPedido().getCliente().getNome(),
-                    produtoPedidoC.getPedido().getDataPedido()
-            );
-            for (ProdutoPedido produtoPedidoP : pedidosFinalizados){
-
+                    """,pedido.getCliente().getNome(),
+                    pedido.getDataPedido());
+            for (ProdutoPedido produto : pedidosFinalizados){
                 System.out.printf("""
-                        %s - %s -> %.2f
+                        %s - %s -> %f
                         
-                        """,
-                        produtoPedidoP.getProduto().getCodProduto(),
-                        produtoPedidoP.getProduto().getNomeProduto(),
-                        produtoPedidoP.getProduto().getValorUnitario());
-                totalTotal += produtoPedidoP.getProduto().getValorUnitario();
+                        """,produto.getProduto().getCodProduto(),
+                        produto.getProduto().getNomeProduto(),
+                        produto.getProduto().getValorUnitario());
+                total += produto.getProduto().getValorUnitario();
             }
-            total += produtoPedidoC.getProduto().getValorUnitario();
             System.out.println("Total: " + total + "\n");
         }
+
         System.out.println("Total de pedidos: " + contador);
-        System.out.println("Total de vendas: " + totalTotal);
     }
 }

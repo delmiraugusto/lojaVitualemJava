@@ -5,6 +5,7 @@ import com.loja.virtual.modelos.produto.Produto;
 import com.loja.virtual.modelos.produto.ProdutoPedido;
 import java.time.LocalDate;
 import static com.loja.virtual.modelos.pedido.Pedido.carrinho;
+import static com.loja.virtual.modelos.pedido.Pedido.finalizarCompra;
 import static com.loja.virtual.modelos.produto.Produto.produtos;
 
 public class PedidosInstance {
@@ -15,7 +16,6 @@ public class PedidosInstance {
             produto1 = produtos.get(1);
         }
         Cliente cliente1 = new Cliente();
-        cliente1.setNome("Rafael");
         Pedido pedido = new Pedido();
         ProdutoPedido pp = new ProdutoPedido();
         pedido.setCliente(cliente1);
@@ -25,7 +25,7 @@ public class PedidosInstance {
         pp.setPedido(pedido);
         carrinho.add(pp);
         Pedido.todosPedidos.add(pedido);
-        Pedido.finalizarCompra();
+        finalizarCompra();
 
 
         Produto produto3 = new Produto();
@@ -33,7 +33,6 @@ public class PedidosInstance {
             produto3 = produtos.get(2);
         }
         Cliente cliente3 = new Cliente();
-        cliente3.setNome("Delmir");
         Pedido pedido3 = new Pedido();
         ProdutoPedido pp3 = new ProdutoPedido();
         pedido3.setCliente(cliente3);
@@ -43,7 +42,7 @@ public class PedidosInstance {
         pp3.setPedido(pedido3);
         carrinho.add(pp3);
         Pedido.todosPedidos.add(pedido3);
-        Pedido.finalizarCompra();
+        finalizarCompra();
 
 
 
@@ -54,7 +53,6 @@ public class PedidosInstance {
             produto2 = produtos.get(3);
         }
         Cliente cliente2 = new Cliente();
-        cliente2.setNome("Gabi");
         Pedido pedido2 = new Pedido();
         ProdutoPedido pp2 = new ProdutoPedido();
         pedido2.setCliente(cliente2);
@@ -64,6 +62,7 @@ public class PedidosInstance {
         pp2.setPedido(pedido2);
         carrinho.add(pp2);
         Pedido.todosPedidos.add(pedido2);
-        Pedido.finalizarCompra();
+        finalizarCompra();
+
     }
 }

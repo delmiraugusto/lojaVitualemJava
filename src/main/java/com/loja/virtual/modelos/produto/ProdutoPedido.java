@@ -1,10 +1,17 @@
 package com.loja.virtual.modelos.produto;
 
 import com.loja.virtual.modelos.pedido.Pedido;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.util.Random;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class ProdutoPedido {
     private long cod;
     private int quantidade;
