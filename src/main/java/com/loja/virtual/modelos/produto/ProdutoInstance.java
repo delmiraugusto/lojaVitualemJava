@@ -1,8 +1,8 @@
 package com.loja.virtual.modelos.produto;
 
 public class ProdutoInstance {
-    public static void produtoInstance() {     
-        
+    public static void produtoInstance() {
+
         Produto jogo1 = new Produto();
         jogo1.setDescricao("Jogo do Ano");
         jogo1.setNomeProduto("Baldur's Gate III");
