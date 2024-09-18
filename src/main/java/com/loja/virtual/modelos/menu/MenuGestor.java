@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 import static com.loja.virtual.modelos.gestor.CadastrarProdutos.cadastrarProdutos;
 import static com.loja.virtual.modelos.gestor.ClienteQueMaisComprou.clienteQueMaisComprou;
-import static com.loja.virtual.modelos.gestor.RemoverProduto.removerProduto;
 import static com.loja.virtual.modelos.gestor.TotalPedidos.totalPedidos;
 import static com.loja.virtual.modelos.menu.LoginVerification.loginVerification;
 import static com.loja.virtual.modelos.produto.Produto.listarProdutos;
@@ -24,11 +23,10 @@ public class MenuGestor {
         |          MENU ADMINISTRATIVO          |
         =========================================
                     Gestor: %s
-        | 1 - Cadastrar Produto                 |
-        | 2 - Produtos Mais Vendidos            |
-        | 3 - Cliente Que Mais Comprou          |
-        | 4 - Total de Pedidos                  |
-        | 5 - Listar Produtos                   |
+        | 1 - Cadastrar Produto                 |            
+        | 2 - Cliente Que Mais Comprou          |
+        | 3 - Total de Pedidos                  |
+        | 4 - Listar Produtos                   |
         | 0 - Voltar                            |
         =========================================
         Escolha uma opção:
@@ -37,11 +35,9 @@ public class MenuGestor {
             sc.nextLine();
             switch (opcao) {
                 case 1 -> cadastrarProdutos();
-                //case 2 -> produtosMaisVendidos();
-                case 3 -> clienteQueMaisComprou();
-                case 4 -> totalPedidos(user);
-                case 5 -> listarProdutos();
-                //case 6 -> removerProduto(user);
+                case 2 -> clienteQueMaisComprou();
+                case 3 -> totalPedidos(user);
+                case 4 -> listarProdutos();
                 case 0 -> loginVerification();
                 default -> System.out.println("Número inválido! Digite uma opção válida.");
                 }
