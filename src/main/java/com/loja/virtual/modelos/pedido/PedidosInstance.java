@@ -5,6 +5,7 @@ import com.loja.virtual.modelos.produto.Produto;
 import com.loja.virtual.modelos.produto.ProdutoPedido;
 import java.time.LocalDate;
 import static com.loja.virtual.modelos.pedido.Pedido.carrinho;
+import static com.loja.virtual.modelos.pedido.Pedido.finalizarCompra;
 import static com.loja.virtual.modelos.produto.Produto.produtos;
 
 public class PedidosInstance {
@@ -24,7 +25,7 @@ public class PedidosInstance {
         pp.setPedido(pedido);
         carrinho.add(pp);
         Pedido.todosPedidos.add(pedido);
-
+        finalizarCompra();
 
 
         Produto produto3 = new Produto();
@@ -41,7 +42,7 @@ public class PedidosInstance {
         pp3.setPedido(pedido3);
         carrinho.add(pp3);
         Pedido.todosPedidos.add(pedido3);
-
+        finalizarCompra();
 
 
 
@@ -61,6 +62,7 @@ public class PedidosInstance {
         pp2.setPedido(pedido2);
         carrinho.add(pp2);
         Pedido.todosPedidos.add(pedido2);
+        finalizarCompra();
 
     }
 }

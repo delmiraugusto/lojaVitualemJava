@@ -23,9 +23,14 @@ public class Pedido {
     public static List<ProdutoPedido> carrinho = new ArrayList<>();
 
     public static List<Pedido> todosPedidos = new ArrayList<>();
+    public static List<ProdutoPedido> pedidosFinalizados = new ArrayList<>();
 
-    long numeroAleatorio = new Random().nextLong(1000000000);
+
     public void setCodPedido() {
-        this.codPedido = numeroAleatorio;
+        this.codPedido = new Random().nextLong(1000000000);
+    }
+    public static void finalizarCompra() {
+        pedidosFinalizados.addAll(carrinho);
+        carrinho.clear();
     }
 }

@@ -1,4 +1,4 @@
-/*package com.loja.virtual.modelos.gestor;
+package com.loja.virtual.modelos.gestor;
 
 
 
@@ -29,4 +29,3 @@ public class RemoverProduto {
         }
     }
 }
-*/
