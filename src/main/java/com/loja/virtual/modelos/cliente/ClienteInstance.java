@@ -28,16 +28,16 @@ public class ClienteInstance {
         cliente4.setSenha("321");
         clientes.add(cliente4);
 
-        Cliente cliente5 = new Cliente();
-        cliente5.setNome("Delmir");
-        cliente5.setLogin("del");
-        cliente5.setSenha("654");
-        clientes.add(cliente5);
-
         Cliente cliente6 = new Cliente();
         cliente6.setNome("Ana Carolina");
         cliente6.setLogin("ana");
         cliente6.setSenha("987");
         clientes.add(cliente6);
+
+        Cliente cliente5 = new Cliente();
+        cliente5.setNome("Delmir");
+        cliente5.setLogin("delmir");
+        cliente5.setSenha("del");
+        clientes.add(cliente5);
     }
 }

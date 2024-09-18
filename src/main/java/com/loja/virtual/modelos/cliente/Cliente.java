@@ -15,6 +15,7 @@ public class Cliente extends Usuario implements Login {
     private Role role = Role.CLIENTE;
     private String login;
     private String senha;
+    private String email;
     public static List<Cliente> clientes = new ArrayList<>();
 
     @Override

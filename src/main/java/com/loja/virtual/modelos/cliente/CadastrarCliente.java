@@ -8,17 +8,17 @@ public class CadastrarCliente {
     public static void cadastrarCliente() {
         Scanner scanner = new Scanner(System.in);
 
+        Cliente cli = new Cliente();
         System.out.println("Digite seu nome: ");
         String nome = scanner.nextLine();
+        cli.setLogin(nome);
         System.out.println("Digite seu email: ");
         String email = scanner.nextLine();
+        cli.setEmail(email);
         System.out.println("Crie uma senha: ");
         String senha = scanner.nextLine();
-
-        Cliente cliente2 = new Cliente();
-        cliente2.setNome(nome);
-        cliente2.setLogin(email);
-        cliente2.setSenha(senha);
-        clientes.add(cliente2);
+        cli.setSenha(senha);
+        clientes.add(cli);
+        System.out.println("Cliente Adicionado com Sucesso");
     }
 }

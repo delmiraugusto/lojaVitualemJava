@@ -51,9 +51,7 @@ public class LoginVerification {
                     case 1 -> {
                         String user = "";
                         String pass = "";
-
                         tipoLogin(user, pass);
-
                     }
                     case 2 -> cadastrarCliente();
                 }
@@ -75,9 +73,7 @@ public class LoginVerification {
                         |2 - Gestor          |
                         |0 - Sair            |
                         ======================
-                        Escolha uma opção:
-                        
-                        """);
+                        Escolha uma opção:""");
                 numero = scEntrada.nextInt();
                 switch (numero) {
                     case 1:
