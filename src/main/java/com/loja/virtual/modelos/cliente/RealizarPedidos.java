@@ -12,12 +12,16 @@ public class RealizarPedidos {
             int opt = 0;
             double total = 0;
                 System.out.printf("""
-                    SerraTec Games
-                    Usuario: %s
-                    %n""", user);
+            ====================================
+            |          SERRATEC GAMES          |
+            ====================================
+            | USUÁRIO: %s                      |
+            | %n                               |
+            |__________________________________|""", user);
                 Produto.listarProdutos();
                 System.out.println("""
-
+                    
+                            *INSERIR JOGO*
                     Escolha o jogo:
                     Digite o número referente ao jogo.
                     """);

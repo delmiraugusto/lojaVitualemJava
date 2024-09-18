@@ -6,6 +6,7 @@ import com.loja.virtual.modelos.produto.ProdutoPedido;
 
 public class ConsultaPedidos {
     public static void consultarPedidos(String user) {
+
         double total = 0;
         boolean hasPedido = false;
 
@@ -14,6 +15,7 @@ public class ConsultaPedidos {
             if (Objects.equals(user, produtoPedidoC.getPedido().getCliente().getLogin())) {
                 if (!hasPedido) {
                     hasPedido = true;
+
                     System.out.printf("""
                                     Nome : %s
                                     Data do Pedido: %s
