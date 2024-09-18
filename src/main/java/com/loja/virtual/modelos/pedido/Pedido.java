@@ -2,24 +2,19 @@ package com.loja.virtual.modelos.pedido;
 
 import com.loja.virtual.modelos.cliente.Cliente;
 import com.loja.virtual.modelos.produto.ProdutoPedido;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
+import lombok.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
+
+@Data
 public class Pedido {
     private Cliente cliente;
     private long codPedido;
     private LocalDate dataPedido;
+    //public static int quantidadePedidos;
     public static List<ProdutoPedido> carrinho = new ArrayList<>();
 
     public static List<Pedido> todosPedidos = new ArrayList<>();
@@ -31,6 +26,7 @@ public class Pedido {
     }
     public static void finalizarCompra() {
         pedidosFinalizados.addAll(carrinho);
+        //quantidadePedidos = quantidadePedidos + 1;
         carrinho.clear();
     }
 }

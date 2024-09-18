@@ -1,15 +1,9 @@
 package com.loja.virtual.modelos.gestor;
 
-
-
-import java.util.List;
-
 import com.loja.virtual.modelos.produto.Produto;
 
 public class RemoverProduto {
-//para remover produtos
-
-    public static void removerProduto(String user, int codProduto, double total) {
+    public static void removerProduto(String user, int codProduto) {
         Produto produtoRemover = null;
 
         for (Produto produto : Produto.produtos) {
@@ -18,12 +12,9 @@ public class RemoverProduto {
                 break;
             }
         }
-
-
         if (produtoRemover != null) {
             Produto.produtos.remove(produtoRemover);
             System.out.println("Produto removido: " + produtoRemover.getNomeProduto());
-            //carrinho.remove(pp);
         } else {
             System.out.println("Erro: Produto não encontrado com o código fornecido.");
         }

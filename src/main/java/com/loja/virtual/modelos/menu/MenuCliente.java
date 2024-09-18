@@ -1,10 +1,7 @@
 package com.loja.virtual.modelos.menu;
 
 import java.util.InputMismatchException;
-import java.util.List;
 import java.util.Scanner;
-
-
 import static com.loja.virtual.modelos.produto.RemoverProdutoCarrinho.removerProdutoCarrinho;
 import static com.loja.virtual.modelos.cliente.ConsultaPedidos.consultarPedidos;
 import static com.loja.virtual.modelos.cliente.RealizarPedidos.realizarPedidos;
@@ -22,15 +19,14 @@ public class MenuCliente {
                                 ====================================
                                 |              Loja                |
                                 ====================================
-                                           usuario: %s
+                                         Usuário: %s
                                 | 1 - Comprar                      |
                                 | 2 - Consultar Pedidos            |
                                 | 3 - Remover Produto              |
                                 | 4 - Finalizar Compra             |
                                 | 0 - Sair                         |
                                 ====================================
-                                Escolha uma opção:""",
-                        user);
+                                Escolha uma opção:""",user);
                 opc = mCliente.nextInt();
                 switch (opc) {
                     case 1 -> realizarPedidos(user);

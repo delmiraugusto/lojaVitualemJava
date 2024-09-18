@@ -11,7 +11,6 @@ import lombok.Data;
 
 
 @Data
-
 public class Cliente extends Usuario implements Login {
     private Role role = Role.CLIENTE;
     private String login;
