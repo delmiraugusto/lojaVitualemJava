@@ -1,41 +1,41 @@
 package com.loja.virtual.modelos.cliente;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
-
-import com.loja.virtual.modelos.pedido.Pedido;
-import com.loja.virtual.modelos.produto.ProdutoPedido;
-
-import static com.loja.virtual.modelos.pedido.Pedido.*;
 import static com.loja.virtual.modelos.pedido.Pedido.pedidosFinalizados;
+import com.loja.virtual.modelos.produto.ProdutoPedido;
 
 public class ConsultaPedidos {
     public static void consultarPedidos(String user) {
-        double totalTotal = 0.0;
-        for (ProdutoPedido produtoPedidoC : pedidosFinalizados) {
-            if(produtoPedidoC.getPedido().getCliente().getLogin().equals(user)) {
-                System.out.printf("""
-                                Nome : %s
-                                Data do Pedido: %s
-                                """,
-                        produtoPedidoC.getPedido().getCliente().getNome(),
-                        produtoPedidoC.getPedido().getDataPedido()
-                );
-                for (ProdutoPedido produtoPedidoP : pedidosFinalizados) {
+        double total = 0;
+        boolean hasPedido = false;
 
+        System.out.println("Listando todos os pedidos:");
+        for (ProdutoPedido produtoPedidoC : pedidosFinalizados) {
+            if (Objects.equals(user, produtoPedidoC.getPedido().getCliente().getLogin())) {
+                if (!hasPedido) {
+                    hasPedido = true;
                     System.out.printf("""
-                                    %s - %s -> %.2f
+                                    Nome : %s
+                                    Data do Pedido: %s
                                     """,
-                            produtoPedidoP.getProduto().getCodProduto(),
-                            produtoPedidoP.getProduto().getNomeProduto(),
-                            produtoPedidoP.getProduto().getValorUnitario());
-                    totalTotal += produtoPedidoP.getProduto().getValorUnitario();
+                            produtoPedidoC.getPedido().getCliente().getNome(),
+                            produtoPedidoC.getPedido().getDataPedido()
+                    );
                 }
-            }else{
-                System.out.println("Nenhum Pedido ainda");
+                System.out.printf("""
+                                %s - %s -> %.2f
+                                """,
+                        produtoPedidoC.getProduto().getCodProduto(),
+                        produtoPedidoC.getProduto().getNomeProduto(),
+                        produtoPedidoC.getProduto().getValorUnitario());
+
+                total += produtoPedidoC.getProduto().getValorUnitario();
             }
         }
-        System.out.println("Total: " + totalTotal);
+        if (hasPedido) {
+            System.out.println("Total: " + total);
+        } else {
+            System.out.println("Nenhum Pedido encontrado para o cliente.");
+        }
     }
 }

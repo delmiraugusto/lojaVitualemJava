@@ -20,7 +20,6 @@ public class Pedido {
     public static List<Pedido> todosPedidos = new ArrayList<>();
     public static List<ProdutoPedido> pedidosFinalizados = new ArrayList<>();
 
-
     public void setCodPedido() {
         this.codPedido = new Random().nextLong(1000000000);
     }
