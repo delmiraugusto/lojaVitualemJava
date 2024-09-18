@@ -1,6 +1,7 @@
 package com.loja.virtual;
 
 import com.loja.virtual.modelos.cliente.ClienteInstance;
+import com.loja.virtual.modelos.pedido.PedidosInstance;
 import com.loja.virtual.modelos.produto.ProdutoInstance;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,6 +13,7 @@ public class VirtualApplication {
 		SpringApplication.run(VirtualApplication.class, args);
 		ProdutoInstance.produtoInstance();
 		ClienteInstance.clienteInstance();
+		PedidosInstance.pedidosInstance();
 		loginVerification();
 	}
 }
