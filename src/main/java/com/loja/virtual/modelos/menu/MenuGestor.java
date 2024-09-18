@@ -19,10 +19,11 @@ public class MenuGestor {
         do {
             try {
                 System.out.printf("""
+                    
         =========================================
         |          MENU ADMINISTRATIVO          |
         =========================================
-                   Gestor: %s
+                    Gestor: %s
         | 1 - Cadastrar Produto                 |
         | 2 - Produtos Mais Vendidos            |
         | 3 - Cliente Que Mais Comprou          |
@@ -31,8 +32,7 @@ public class MenuGestor {
         | 0 - Voltar                            |
         =========================================
         Escolha uma opção:
-        %n
-        """,user);
+        %n""",user);
             opcao = sc.nextInt();
             sc.nextLine();
             switch (opcao) {

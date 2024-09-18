@@ -16,6 +16,7 @@ public class ConsultaPedidos {
         for (ProdutoPedido produtoPedidoC : pedidosFinalizados) {
             if(produtoPedidoC.getPedido().getCliente().getLogin().equals(user)) {
                 System.out.printf("""
+                                
                                 Nome : %s
                                 Data do Pedido: %s
                                 """,
@@ -23,7 +24,6 @@ public class ConsultaPedidos {
                         produtoPedidoC.getPedido().getDataPedido()
                 );
                 for (ProdutoPedido produtoPedidoP : pedidosFinalizados) {
-
                     System.out.printf("""
                                     %s - %s -> %.2f
                                     """,
